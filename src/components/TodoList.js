@@ -39,13 +39,14 @@ import Todo from "./Todo";
 // }
 
 const TodoList = props => {
-//  console.log(props.todoList);
+
     return(
         <div className="todo-list">
             {props.todoList.map(item => {
                 // console.log(item.task);
                 return <Todo handleToggle={props.handleToggle} task={item.task} key={item.id}/>
             })}
+            
         </div>
     )
 }

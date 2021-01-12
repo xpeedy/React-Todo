@@ -12,7 +12,6 @@ class TodoForm extends React.Component {
         this.setState({
             inputValue: evt.target.value
         });
-        console.log(this.state.inputValue)
     }
 
     Submit = (evt) => {
@@ -25,15 +24,21 @@ class TodoForm extends React.Component {
         //create a new object
     }
 
+    
+
+    Completed = () => {
+        this.props.handleCompleted();
+    }
+
 
     render() {
         return(
             <form onSubmit={this.Submit}>
                 <input onChange={this.Change} value={this.state.inputValue}
-                type="text"
+                type="text" name="item"
                 />
                 <button>Add Todo</button>
-                <button>Clear Completed</button>
+                <button onClick={this.Completed} className="clean-btn">Clear Completed</button>
             </form>
         )
     }

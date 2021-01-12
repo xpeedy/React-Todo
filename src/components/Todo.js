@@ -24,7 +24,7 @@ const Todo = props => {
     }
     console.log(props);
     return(
-        <div onClick={Toggle} className={`item${props.task.completed ? `complete` : ``}`}>
+        <div onClick={Toggle} className={`item${props.task.completed ? `completed` : ``}`}>
             <p>{props.task}</p>
         </div>
     )

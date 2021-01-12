@@ -27,10 +27,10 @@ class App extends React.Component {
     }
   }
 
-  handleAdd = (evt) => {
+  handleAdd = (itemName) => {
     this.setState({
       todoList: [...this.state.todoList,{
-        task: evt,
+        task: itemName,
         id: this.state.todoList.length,
         completed: false,
       }]
@@ -40,12 +40,10 @@ class App extends React.Component {
   handleToggle = (itemId) => {
     this.setState({
       todoList: this.state.todoList.map(item => {
-        if(itemId === item.id){
+        if( item.id === itemId){
           return {...item,completed: !item.completed}
         }
-        else {
-          return item;
-        }
+        return(item);
       })
     })
   }
@@ -67,12 +65,13 @@ class App extends React.Component {
           <h2>Welcome to your Todo App!</h2>
           <TodoForm 
           handleAdd={this.handleAdd}
+          handleCompleted={this.handleCompleted}
           />
         </div>
         <TodoList 
         todoList={this.state.todoList} 
         handleToggle={this.handleToggle} 
-        handleCompleted={this.handleCompleted} />
+        />
       </div>
     );
   }
