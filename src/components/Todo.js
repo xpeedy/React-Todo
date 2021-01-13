@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./Todo.css"
 // class Todo extends React.Component {
 //     constructor(props){
 //         super();
@@ -19,13 +19,14 @@ import React from "react";
 //     }
 // }
 const Todo = props => {
+    console.log(props)
     const Toggle = () => {
-        props.handleToggle(props.task.id);
+        props.handleToggle(props.item.id);
     }
-    console.log(props);
+    console.log(props.item.id);
     return(
-        <div onClick={Toggle} className={`item${props.task.completed ? `completed` : ``}`}>
-            <p>{props.task}</p>
+        <div onClick={Toggle} className={`item${props.item.completed ? `completed` : ``}`}>
+            <p>{props.item.task}</p>
         </div>
     )
 }

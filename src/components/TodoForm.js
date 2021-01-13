@@ -26,9 +26,10 @@ class TodoForm extends React.Component {
 
     
 
-    Completed = () => {
-        this.props.handleCompleted();
-    }
+    // Completed = (e) => {
+    //     e.preventDefult()
+    //     this.props.handleCompleted();
+    // }
 
 
     render() {
@@ -38,7 +39,7 @@ class TodoForm extends React.Component {
                 type="text" name="item"
                 />
                 <button>Add Todo</button>
-                <button onClick={this.Completed} className="clean-btn">Clear Completed</button>
+                <button onClick={this.props.handleCompleted} className="clean-btn">Clear Completed</button>
             </form>
         )
     }

@@ -48,7 +48,8 @@ class App extends React.Component {
     })
   }
 
-  handleCompleted = () => {
+  handleCompleted = (e) => {
+    e.preventDefault()
     const newTodoList = this.state.todoList.filter(item=>{
       return(!item.completed);
     });

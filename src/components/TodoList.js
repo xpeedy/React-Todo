@@ -44,7 +44,7 @@ const TodoList = props => {
         <div className="todo-list">
             {props.todoList.map(item => {
                 // console.log(item.task);
-                return <Todo handleToggle={props.handleToggle} task={item.task} key={item.id}/>
+                return <Todo handleToggle={props.handleToggle} item={item} key={item.id}/>
             })}
             
         </div>
